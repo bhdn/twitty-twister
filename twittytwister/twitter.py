@@ -429,6 +429,9 @@ class Twitter(object):
     def followers_ids(self, delegate, user, params={}, extra_args=None, page_delegate=None):
         return self.__get_maybe_paging('/followers/ids/%s.xml' % (user), delegate, params, txml.PagedIDList, extra_args, page_delegate)
 
+    def list_members(self, delegate, user, list_name, params={}, extra_args=None):
+        return self.__get('/%s/%s/members.xml' % (user, list_name), delegate,
+                params, txml.Users, extra_args)
 
     def show_user(self, user):
         """Get the info for a specific user.
