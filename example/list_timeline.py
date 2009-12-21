@@ -19,7 +19,6 @@ fetchCount = 0
 
 @defer.deferredGenerator
 def getSome(tw, list_user, list_name):
-    import pdb; pdb.set_trace()
     global fetchCount
     fetchCount = 0
 
